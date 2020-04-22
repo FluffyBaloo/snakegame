@@ -18,7 +18,7 @@ function setup() {
 	w = floor(width / rez);
 	h = floor(height / rez);
 	frameRate(5);
-    song.play();
+    song.loop();
     song.setVolume(0.5);
 	snake = new Snake();
 	
@@ -58,6 +58,7 @@ function draw() {
 		print("END GAME");
 		background(255, 0, 0);
 		noLoop();
+		song.stop();
 	}
 
 	noStroke();
