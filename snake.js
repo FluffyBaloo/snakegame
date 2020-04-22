@@ -41,7 +41,7 @@ class Snake {
 		for (let part of this.body) {
 			rect(part.x, part.y, 1, 1);
 		}
-		fill(0, 30, 0);
+		fill(0, 255,255);
 		rect(this.head.x, this.head.y, 1, 1);
 	}
 
