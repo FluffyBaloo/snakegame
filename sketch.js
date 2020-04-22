@@ -4,12 +4,22 @@ let food;
 let w;
 let h;
 let dirs;
+let bImg;
+var song;
+
+function preload() {
+  bImg = loadImage('background.jpg');
+  song = loadSound("hyper.mp3");
+  
+} 
 
 function setup() {
 	createCanvas(400, 400);
 	w = floor(width / rez);
 	h = floor(height / rez);
 	frameRate(5);
+    song.play();
+    song.setVolume(0.5);
 	snake = new Snake();
 	
 	dirs = {
@@ -36,8 +46,9 @@ function keyPressed() {
 }
 
 function draw() {
+  
 	scale(rez);
-	background(220);
+	background(bImg);
 	if (snake.update(food)) {
 		foodLocation();
 	}
